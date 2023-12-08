@@ -1,0 +1,23 @@
+{
+  "name": "dummy-consumer",
+  "version": "1.0.0",
+  "description": "`Current Version: 1.0.0`",
+  "scripts": {
+    "receive": "node consumer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/skill90/dummy-consumer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/skill90/dummy-consumer/issues"
+  },
+  "homepage": "https://gitlab.com/skill90/dummy-consumer#readme",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.0.3"
+  }
+}
