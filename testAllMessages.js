@@ -10,6 +10,7 @@ amqp.connect(process.env.RMQ_URI, (err, connection) => {
 
     let exchange = process.env.RMQ_EXCHANGE;
     let key = process.env.RMQ_KEY;
+    let eventId = process.env.EVENT;
     let date = new Date().toLocaleString();
 
     channel.assertExchange(exchange, "topic", { durable: true });
@@ -26,7 +27,7 @@ amqp.connect(process.env.RMQ_URI, (err, connection) => {
           (msg) => {
             let response = [];
             let message = JSON.parse(msg.content.toString());
-            if (message.body.fixture.eventId == 526877099) {
+            if (message.body.fixture.eventId == eventId) {
               console.log(message.body.fixture.eventId);
               let markets = message.body.markets;
               if (markets && markets.length > 0) {
