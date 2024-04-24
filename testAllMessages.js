@@ -33,15 +33,19 @@ amqp.connect(process.env.RMQ_URI, (err, connection) => {
               if (markets && markets.length > 0) {
                 for (let i = 0; i < markets.length; i++) {
                   response.push({ name: markets[i].name });
+                  response[i].odds = [];
                   for (let j = 0; j < markets[i].odds.length; j++) {
-                    response[i].odds = {
+                    response[i].odds.push({
                       name: markets[i].odds[j].name,
                       value: markets[i].odds[j].value,
                       odd: markets[i].odds[j].odd,
-                    };
+                    });
                   }
                 }
-                console.log(response);
+                
+                for (let market of response) {
+                  console.log(JSON.parse(JSON.stringify(market)));
+                }
               }
             }
           },
