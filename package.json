@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "`Current Version: 1.0.0`",
   "scripts": {
-    "receive": "node consumer.js"
+    "receive": "node consumer.js",
+    "testing": "node testAllMessages.js"
   },
   "repository": {
     "type": "git",
